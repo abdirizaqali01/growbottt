@@ -1,0 +1,28 @@
+{% load static %}
+
+{% block styles %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{% static 'mobileLanding.css' %}">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" />
+{% endblock %}
+
+{% block content %}
+    <div class="banner">
+      <img src="./static/BANNER.jpg" alt="Banner">
+    </div>
+
+    <div class="subbanner">
+      <img src="./static/sub banner.jpg" alt="Banner">
+    </div>
+  
+
+      <img src="{% static 'gbr.png' %}" alt="Logo" class="robot-image">
+    <div class="button-container">
+      <a href="login" onclick="window.location.href='login'">
+        <img class="login-btn" src="./static/Login.png" alt="Login" />
+      </a>
+      <a href="signup" onclick="window.location.href='signup'">
+        <img class="signup-btn" src="./static/Signup.png" alt="signup" />
+      </a>
+  </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% load static %}
+
+{% block styles %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{% static 'Chat.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'mobileChat.css' %}">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" />
+{% endblock %}
+
+{% block content %}
+
+
+    {% if error_message %}
+    <p style="color: red">{{ error_message }}</p>
+    {% endif %}
+    
+    <div id="messages">
+      {% for message, response in messages %}
+        <p>{{ message }}</p>
+        <p>{{ response }}</p>
+        <br> 
+      {% endfor %}
+    </div>  
+    
+    <form method="post" action="{% url 'chat' %}">
+      {% csrf_token %}
+      <div class = "form-field">
+        <textarea name="message" required rows="1" style="resize: vertical; max-height: 3em;" placeholder="Ask"></textarea>
+      </div>
+      <button type="submit" class="submit-button">
+        <img src="{% static 'send.PNG' %}" alt="submit" class="submit-image">
+      </button>
+    </form>
+    </form>
+
+    {% if result %}
+    <p>{{ result.0 }}</p>
+    <p>{{ result.1 }}</p>
+    <br> 
+  {% endif %}
+
+{% endblock %}

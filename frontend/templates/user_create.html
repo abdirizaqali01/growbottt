@@ -1,0 +1,33 @@
+{% load static %}
+
+{% block styles %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'mobileSignup.css' %}">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" />
+{% endblock %}
+
+{% block content %}
+  <img src="{% static 'gbr.png' %}" alt="Logo" class="robot-image">
+  {% if error_message %}
+  <p style="color: red">{{ error_message }}</p>
+{% endif %}
+  <form method="post" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <div>
+      <input type="text" name="username" required placeholder="Name:">
+    </div>
+    <div>
+      <input type="email" name="email" required placeholder="Email:">
+    </div>
+    <div>
+      <input type="password" name="password" required placeholder="Password">
+    </div>
+    <div>
+      <input type="password" name="password2" required placeholder="Retype Password">
+    </div>
+    <button type="submit" class="signup-button">
+      <img src="{% static 'Signup.png' %}" alt="Signup" class="signup-image">
+    </button>
+  </form>
+{% endblock %}

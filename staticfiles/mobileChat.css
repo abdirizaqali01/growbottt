@@ -1,0 +1,16 @@
+@media (max-width: 500px) {
+  body {
+    background-image: url("chat page.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-color: #ffefca;
+    margin-top: 80px;
+    position: relative;
+    z-index: 0;
+  }
+  .messages{
+    position: relative;
+    z-index: 1;
+  }
+}
