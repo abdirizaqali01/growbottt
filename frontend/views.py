@@ -73,11 +73,12 @@ def signup(request):
 def login_view(request):
     if request.method == 'POST':
         # Get the username or email and password from the request
-        username_or_email = request.POST.get('username_or_email')
+        username_or_email = request.POST.get('username')
         password = request.POST.get('password')
 
         # Try to authenticate the user using the username or email and password
         user = authenticate(request, username=username_or_email, password=password)
+        print(user)
 
         # If the user is authenticated, log them in and create a session
         if user is not None:

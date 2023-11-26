@@ -1,3 +1,5 @@
+
+{%extends 'base.html'%}
 {% load static %}
 
 {% block styles %}
@@ -15,7 +17,7 @@
   <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
     <div>
-      <input type="text" name="email" required placeholder="Email">
+      <input type="text" name="username" required placeholder="Email">
     </div>
     <div>
       <input type="password" name="password" required placeholder="Password">

@@ -1,3 +1,4 @@
+{%extends 'base.html'%}
 {% load static %}
 
 {% block styles %}
@@ -7,22 +8,22 @@
 {% endblock %}
 
 {% block content %}
-    <div class="banner">
-      <img src="./static/BANNER.jpg" alt="Banner">
-    </div>
+<div class="banner">
+  <img src="{% static 'BANNER.jpg' %}" alt="Banner">
+</div>
 
-    <div class="subbanner">
-      <img src="./static/sub banner.jpg" alt="Banner">
-    </div>
-  
+<div class="subbanner">
+  <img src="{% static 'sub_banner.jpg' %}" alt="Banner">
+</div>
 
-      <img src="{% static 'gbr.png' %}" alt="Logo" class="robot-image">
-    <div class="button-container">
-      <a href="login" onclick="window.location.href='login'">
-        <img class="login-btn" src="./static/Login.png" alt="Login" />
-      </a>
-      <a href="signup" onclick="window.location.href='signup'">
-        <img class="signup-btn" src="./static/Signup.png" alt="signup" />
-      </a>
-  </div>
+
+<img src="{% static 'gbr.PNG' %}" alt="Logo" class="robot-image">
+<div class="button-container">
+  <a href="login" onclick="window.location.href='login'">
+    <img class="login-btn" src="{% static 'Login.PNG' %}" alt="Login" />
+  </a>
+  <a href="signup" onclick="window.location.href='signup'">
+    <img class="signup-btn" src="{% static 'Signup.PNG' %}" alt="signup" />
+  </a>
+</div>
 {% endblock %}
