@@ -1,1 +1,1 @@
-web: gunicorn growbotai2.wsgi
+web gunicorn growbotai2.wsgi
