@@ -1,5 +1,5 @@
 """
-WSGI config for growbotai2 project.
+WSGI config for template project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -10,9 +10,10 @@ https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
+from whitenoise import WhiteNoise
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'growbotai2.settings')
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'template.settings')
 
 application = get_wsgi_application()
-
-app = application
+application = WhiteNoise(application)
